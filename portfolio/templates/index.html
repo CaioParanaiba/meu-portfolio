@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Seção de introdução -->
+    <section class="bg-white p-6 rounded shadow-md mb-6">
+        <h2 class="text-2xl font-bold mb-4">Bem-vindo ao Meu Portfólio</h2>
+        <p class="mb-4">Esse é o meu espaço para compartilhar projetos, habilidades e experiências. Espero que você aproveite!</p>
+    </section>
+
+    <!-- Seção de projetos -->
+    <section class="mb-6">
+        <h3 class="text-xl font-semibold mb-2">Meus Projetos</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="p-4 border rounded shadow">
+                <h4 class="font-bold">Projeto 1</h4>
+                <p>Descrição curta do projeto 1.</p>
+            </div>
+            <div class="p-4 border rounded shadow">
+                <h4 class="font-bold">Projeto 2</h4>
+                <p>Descrição curta do projeto 2.</p>
+            </div>
+            <div class="p-4 border rounded shadow">
+                <h4 class="font-bold">Projeto 3</h4>
+                <p>Descrição curta do projeto 3.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de contato -->
+    <section>
+        <h3 class="text-xl font-semibold mb-2">Entre em Contato</h3>
+        <form class="flex flex-col gap-4">
+            <input type="text" placeholder="Seu Nome" class="p-2 border rounded" required>
+            <input type="email" placeholder="Seu Email" class="p-2 border rounded" required>
+            <textarea placeholder="Sua Mensagem" class="p-2 border rounded" rows="4" required></textarea>
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">Enviar</button>
+        </form>
+    </section>
+{% endblock %}
