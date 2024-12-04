@@ -4,7 +4,7 @@
  * If you need the full config, get it from here:
  * https://unpkg.com/browse/tailwindcss@latest/stubs/defaultConfig.stub.js
  */
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
         /**
@@ -42,16 +42,37 @@ module.exports = {
         // '../../**/*.py'
     ],
     theme: {
-        extend: {},
+        colors: {
+            'white': '#ffffff',
+            'purple': '#3f3cbb',
+            'midnight': '#121063',
+            'metal': '#565584',
+            'tahiti': '#3ab7bf',
+            'silver': '#ecebff',
+            'bubble-gum': '#ff77e9',
+            'bermuda': '#78dcca',
+          },
+        extend: {
+            
+            animation: {
+            'gradient-blur': 'gradientBlur 4s ease infinite',
+            },
+            keyframes: {
+                gradientBlur: {
+                '0%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' },
+                '100%': { backgroundPosition: '0% 50%' },
+                },
+            },
+            backgroundSize: {
+                'gradient-blur': '200% 200%',
+            },
+        },
     },
-    plugins: [
-        /**
-         * '@tailwindcss/forms' is the forms plugin that provides a minimal styling
-         * for forms. If you don't like it or have own styling for forms,
-         * comment the line below to disable '@tailwindcss/forms'.
-         */
+      plugins: [
         require('@tailwindcss/forms'),
         require('@tailwindcss/typography'),
         require('@tailwindcss/aspect-ratio'),
-    ],
-}
+        require('daisyui'),
+      ],
+    };

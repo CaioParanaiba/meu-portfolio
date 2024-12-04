@@ -1,34 +1,302 @@
-{% load static tailwind_tags %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste de Tailwind</title>
-    <!-- Inclusão do Tailwind CSS via CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.8.0/dist/tailwind.min.css" rel="stylesheet">
-    {% tailwind_css %}
+    <title>Portfólio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        .animated-font {
+            display: inline-block;
+            font-size: 3rem; /* Tamanho da fonte */
+            transition: font-family 1s ease-in-out; /* Transição suave entre fontes */
+        }
+        .image-section .background-image {
+            background-image: url('meu_portfolio\static\imgs\caio1.jpg');
+          }       
+        
+        .custom-img {
+            width: 300px; /* Define a largura */
+            height: auto; /* Mantém a proporção */
+            border-radius: 10px; /* Cantos arredondados */
+        }
+        
+    </style>
 </head>
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+<body class="scroll-smooth">
 
-    <!-- Cabeçalho -->
-    <header class="bg-blue-500 text-white p-4">
-        <h1 class="text-3xl">Bem-vindo! ao Meu Portfólio</h1>
-    </header>
+    <!-- Primeira seção (Fundo azul escuro e conteúdo à esquerda) -->
+    <section class="relative h-screen overflow-hidden">
+        <!-- Fundo animado -->
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-900 via-blue-700 to-blue-900 bg-[gradient-blur] animate-gradient-blur opacity-100 blur-lg"></div>
+        <!-- Conteúdo em primeiro plano -->
+        <div class="relative flex items-center h-full">
+            <div class="container mx-auto px-4 flex justify-center">
+                <div class="text-white text-center w-full md:w-2/3">
+                    <h1 
+                        <span class="animated-font font-bold">Bem-vindo ao meu:</span>    
+                        <span id="portfolio-text" class="animated-font font-bold">Portfólio</span>    
+                    </h1>
+                    <h2 class="text-3xl mb-4">Me chamo Caio Paranaiba</h2>
+                    <p class="text-lg mb-6">Sou um desenvolvedor apaixonado por criar experiências web. Gosto de trabalhar com tecnologias modernas para transformar ideias em soluções funcionais. Além disso, realizo pesquisas na área de IA na saúde, o que me proporciona um conhecimento amplo em diversas áreas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 
-    <!-- Conteúdo principal -->
-    <main class="p-6">
-        <section class="max-w-4xl mx-auto">
-            <h2 class="text-2xl font-bold mb-4">Sobre Mim</h2>
-            <p class="mb-4">Esse é um exemplo de página com Tailwind CSS. Utilize as classes do Tailwind para estilizar seu conteúdo de forma fácil e rápida.</p>
-            <button class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">Saiba Mais</button>
-        </section>
-    </main>
+    <!-- Minhas Skills -->
+    <section class="relative h-screen overflow-hidden">
+        <!-- Fundo animado -->
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-900 via-blue-700 to-blue-900 bg-[gradient-blur] animate-gradient-blur opacity-100 blur-lg"></div>
+        <div class="container mx-auto px-4 py-8 relative z-10">
+                <h2 class="text-4xl font-extrabold mb-8 text-center text-white">Minhas Skills</h2>
+            
+            <!-- Grupo de Linguagens -->
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-white mb-4">Linguagens</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Python -->
+                    <div class="flex flex-col items-center justify-center bg-blue-700 text-white px-5 py-3 rounded-lg shadow-lg hover:bg-blue-800 transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo" class="w-6 h-6 mb-2">
+                        <span>Python</span>
+                    </div>
+                    <!-- Git -->
+                    <div class="flex flex-col items-center justify-center bg-gray-600 text-white px-5 py-3 rounded-lg shadow-lg hover:bg-gray-700 transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://img.icons8.com/color/512/git.png" alt="Git Logo" class="w-6 h-6 mb-2">
+                        <span>Git</span>
+                    </div>
+                    <!-- HTML -->
+                    <div class="flex flex-col items-center justify-center bg-red-500 text-white px-5 py-3 rounded-lg shadow-lg hover:bg-red-600 transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML Logo" class="w-6 h-6 mb-2">
+                        <span>HTML</span>
+                    </div>
+                    <!-- CSS -->
+                    <div class="flex flex-col items-center justify-center bg-indigo-700 text-white px-5 py-3 rounded-lg shadow-lg hover:bg-indigo-800 transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" class="w-6 h-6 mb-2">
+                        <span>CSS</span>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Rodapé -->
-    <footer class="bg-gray-800 text-white p-4 mt-6">
-        <p>&copy; 2024 Meu Portfólio</p>
-    </footer>
+            <!-- Grupo de Bibliotecas e Frameworks de Python -->
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-white mb-4">Bibliotecas e Frameworks de Python</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Pandas -->
+                    <div class="flex flex-col items-center justify-center bg-green-600 text-white px-5 py-3 rounded-lg shadow-lg hover:bg-green-700 transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://cdn.worldvectorlogo.com/logos/pandas.svg" alt="Pandas Logo" class="w-6 h-6 mb-2">
+                        <span>Pandas</span>
+                    </div>
+                    <!-- Matplotlib -->
+                    <div class="flex flex-col items-center justify-center bg-purple-500 text-white px-5 py-3 rounded-lg shadow-lg hover:bg-purple-600 transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Matplotlib_icon.svg/1200px-Matplotlib_icon.svg.png" alt="Matplotlib Logo" class="w-6 h-6 mb-2">
+                        <span>Matplotlib</span>
+                    </div>
+                    <!-- NumPy -->
+                    <div class="flex flex-col items-center justify-center bg-gray-700 text-white px-5 py-3 rounded-lg shadow-lg hover:bg-gray-800 transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://cdn.worldvectorlogo.com/logos/numpy-1.svg" alt="NumPy Logo" class="w-6 h-6 mb-2">
+                        <span>NumPy</span>
+                    </div>
+                    <!-- PyTorch -->
+                    <div class="flex flex-col items-center justify-center bg-gray-700 text-white px-5 py-3 rounded-lg shadow-lg hover:bg-gray-800 transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://blog.christianperone.com/wp-content/uploads/2018/10/pytorch-logo.png" alt="PyTorch Logo" class="w-6 h-6 mb-2">
+                        <span>PyTorch</span>
+                    </div>
+                    <!-- TensorFlow -->
+                    <div class="flex flex-col items-center justify-center bg-blue-500 text-white px-5 py-3 rounded-lg shadow-lg hover:bg-blue-600 transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://user-images.githubusercontent.com/40668801/42043955-fbb838a2-7af7-11e8-9795-7f890e871d13.png" alt="TensorFlow Logo" class="w-6 h-6 mb-2">
+                        <span>TensorFlow</span>
+                    </div>
+                    <!-- Keras -->
+                    <div class="flex flex-col items-center justify-center bg-red-700 text-white px-5 py-3 rounded-lg shadow-lg hover:bg-red-800 transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://keras.io/img/logo.png" alt="Keras Logo" class="w-30 h-10 mb-2">
+                    </div>
+                    <!-- Flask -->
+                    <div class="flex flex-col items-center justify-center bg-gray-300 text-black px-5 py-3 rounded-lg shadow-lg hover:bg-gray-400 transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://cdn.worldvectorlogo.com/logos/flask.svg" alt="Flask Logo" class="w-30 h-10 mb-2">
+                    </div>
+                    <!-- Django -->
+                    <div class="flex flex-col items-center justify-center bg-green-500 text-white px-5 py-3 rounded-lg shadow-lg hover:bg-green-600 transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Django_logo.svg" alt="Django Logo" class="w-30 h-10 mb-2">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grupo de Ferramentas e Serviços -->
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-white mb-4">Ferramentas e Serviços</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Power BI -->
+                    <div class="flex flex-col items-center justify-center bg-yellow-500 text-white px-5 py-3 rounded-lg shadow-lg hover:bg-yellow-600 transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/microsoft_powerbi_logo_icon_169958.png" alt="Power BI Logo" class="w-30 h-10 mb-2">
+                    </div>
+                    <!-- AWS -->
+                    <div class="flex flex-col items-center justify-center bg-yellow-100 text-white px-5 py-3 rounded-lg shadow-lg hover:bg-gray-300 transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1280px-Amazon_Web_Services_Logo.svg.png" alt="AWS Logo" class="w-30 h-10 mb-2">
+                    </div>
+                    <!-- Google Cloud -->
+                    <div class="flex flex-col items-center justify-center bg-white text-white px-5 py-3 rounded-lg shadow-lg hover:bg-gray-300 transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/1024px-Google_Cloud_logo.svg.png" alt="Google Cloud Logo" class="w-30 h-10 mb-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- (Sobre Mim) -->
+    <section class="h-screen flex items-center bg-gray-100">
+        
+        <div class="container mx-auto flex">
+            <!-- Foto -->
+            <div class="w-1/2 flex justify-center items-center">
+                <div class="content">
+                    <img src="{% static 'imgs/caio1.jpg' %}" alt="Caio">
+                </div>
+            </div>
+            <!-- Texto sobre mim -->
+            <div class="w-1/2 px-8">
+                <h2 class="text-3xl font-bold mb-6">Mais Sobre Mim</h2>
+                <p class="text-lg">Tenho experiência com diversas tecnologias, incluindo HTML, CSS, JavaScript, e frameworks como Django e Flask. Minha paixão é construir projetos desafiadores e contribuir para o crescimento da web.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="portfolio" class="h-screen flex items-center bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-8">Meus Projetos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Cartão de Projeto 1 -->
+                <div class="project-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="{% static 'imgs/projeto1.gif' %}" alt="Projeto 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Calculadora de Impacto Regulatório Para Empreendedores</h3>
+                        <p class="text-gray-700 mb-4 text-justify">
+                            A Calculadora de Impacto Regulatório é uma aplicação web, que ajuda empreendedores a calcular os custos de regulamentações. A plataforma oferece uma interface intuitiva e visualmente agradável, voltada para empresários e gestores.
+                        </p>
+                        <!-- Badges com as tecnologias usadas -->
+                        <div class="flex justify-center flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-200 text-blue-900 text-sm font-medium px-3 py-1 rounded">Python</span>
+                            <span class="bg-yellow-200 text-yellow-900 text-sm font-medium px-3 py-1 rounded">Flask</span>
+                            <span class="bg-green-200 text-green-900 text-sm font-medium px-3 py-1 rounded">SQL</span>
+                            <span class="bg-gray-200 text-gray-900 text-sm font-medium px-3 py-1 rounded">AWS EC2</span>
+                            <span class="bg-gray-200 text-gray-900 text-sm font-medium px-3 py-1 rounded">AWS RDS</span>
+                            <span class="bg-red-200 text-red-900 text-sm font-medium px-3 py-1 rounded">HTML</span>
+                            <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded">CSS</span>
+                        </div>
+                        <!-- Links -->
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-500 hover:underline">Demo</a>
+                            <a href="#" class="text-gray-500 hover:underline">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cartão de Projeto 2 -->
+                <div class="project-card bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="{% static 'imgs/projeto2.jpg' %}" alt="Lung Segmentation Software" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Lung Segmentation Software</h3>
+                        <p class="text-gray-700 mb-4 text-justify">
+                            Este projeto é um software desenvolvido para segmentação pulmonar em imagens médicas no formato DICOM. Utilizando um modelo de IA previamente treinado, o software permite que médicos e profissionais da saúde carreguem pastas contendo exames de pacientes, realizem a segmentação automática e visualizem as imagens segmentadas.
+                        </p>
+                        <!-- Badges com as tecnologias usadas -->
+                        <div class="flex justify-center flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded">Python</span>
+                        </div>
+                        <!-- Links -->
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-500 hover:underline">Demo</a>
+                            <a href="#" class="text-gray-500 hover:underline">GitHub</a>
+                        </div>
+                    </div>
+                </div>                
+                
+            </div>
+        </div>
+    </section>
+    
+
+    
+
+    <script>
+    // Detectar a rolagem do mouse e ir para a próxima seção
+    window.addEventListener('wheel', function(event) {
+        event.preventDefault();
+
+        // Chamar a função de animação para cada elemento de texto
+        changeFont('portfolio-text');
+        changeFont('skills-text');
+
+        if (event.deltaY > 0) { // Scroll para baixo
+            window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+        } else { // Scroll para cima
+            window.scrollBy({ top: -window.innerHeight, behavior: 'smooth' });
+        }
+    });
+
+    // Função para mudar a fonte de cada letra
+    function changeFont(elementId) {
+        // Array de fontes para a animação
+        const fonts = [
+            '"Press Start 2P", cursive',
+            '"Courier New", monospace',
+            '"VT323", monospace',
+            '"Inconsolata", monospace',
+            '"Roboto Mono", monospace'
+        ];
+
+        // Obter o elemento de texto pelo ID e dividir em caracteres
+        const textElement = document.getElementById(elementId);
+        if (!textElement) return; // Verificar se o elemento existe
+
+        const text = textElement.innerText;
+        textElement.innerHTML = '';
+
+        // Criar elementos para cada letra
+        text.split('').forEach(char => {
+            const span = document.createElement('span');
+            span.classList.add('animated-letter');
+            span.innerText = char;
+            textElement.appendChild(span);
+        });
+
+        // Obter todas as letras criadas
+        const spans = document.querySelectorAll(`#${elementId} .animated-letter`);
+        let index = 0;
+        const duration = 30000; // Duração em milissegundos (30 segundos)
+        const changeInterval = 200; // Intervalo de mudança de fonte (em ms)
+        const totalChanges = Math.floor(duration / changeInterval); // Número de mudanças no total
+
+        // Função para mudar a fonte de cada letra
+        function animateFontChange() {
+            let changeCount = 0;
+
+            spans.forEach((span, i) => {
+                const interval = setInterval(() => {
+                    span.style.fontFamily = fonts[Math.floor(Math.random() * fonts.length)];
+                    changeCount++;
+
+                    if (changeCount >= totalChanges) {
+                        clearInterval(interval);
+                        // Depois de 10 segundos, deixar a fonte padrão em cada letra
+                        span.style.fontFamily = 'inherit'; // Usa a fonte padrão definida no CSS do projeto
+                    }
+                }, changeInterval);
+            });
+        }
+
+        // Iniciar a animação
+        animateFontChange();
+    }
+
+
+    </script>
 
 </body>
 </html>

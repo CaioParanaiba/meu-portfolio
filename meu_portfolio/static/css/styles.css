@@ -1,0 +1,52 @@
+.image-container {
+    position: relative; /* Necessário para posicionar a imagem e o fundo */
+    width: 100%; /* A largura do contêiner será 100% do container pai */
+    max-width: 500px; /* Largura máxima do contêiner */
+    height: auto; /* Ajusta conforme o tamanho da imagem */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    display: flex; /* Garante alinhamento interno */
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px; /* Cantos arredondados */
+    overflow: hidden; /* Impede que elementos ultrapassem o contêiner */
+    background: linear-gradient(45deg, rgba(255, 0, 150, 0.6), rgba(0, 204, 255, 0.6));
+    background-blend-mode: overlay; /* Mistura o gradiente com a imagem */
+}
+
+.image-container img {
+    width: 100%; /* A imagem se ajusta ao contêiner */
+    height: auto; /* Mantém a proporção */
+    mix-blend-mode: multiply; /* Mistura a imagem com o fundo */
+    z-index: 1; /* Garante que a imagem fique no topo */
+}
+
+.blur-background {
+    position: relative;
+    width: 100%; /* Ocupa toda a largura */
+    height: 100vh; /* Altura ajustada à viewport */
+    display: flex; /* Para centralizar conteúdo */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Para cortar elementos fora do contêiner */
+}
+
+.blur-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("{% static 'imgs/caio1.jpg' %}") center/cover no-repeat;
+    filter: blur(20px); /* Aplica o desfoque */
+    z-index: -1; /* Garante que fique atrás do conteúdo */
+    transform: scale(1.2); /* Aumenta o fundo para evitar bordas visíveis */
+}
+
+.content img {
+    position: relative;
+    max-width: 300px; /* Ajuste conforme necessário */
+    height: auto;
+    border-radius: 10px; /* Opcional: bordas arredondadas */
+    z-index: 1; /* Garante que fique acima do fundo */
+}
